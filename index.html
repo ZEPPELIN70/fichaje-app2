@@ -51,21 +51,77 @@
             align-items: center;
         }
         
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .logo i {
-            font-size: 1.8rem;
-            color: var(--danger-color);
-        }
-        
-        .logo h1 {
-            font-size: 1.8rem;
-            font-weight: 600;
-        }
+        <title>Logo AGE</title>
+<style>
+  body {
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  svg {
+    width: 420px;
+    max-width: 90%;
+  }
+
+  .text {
+    font-family: Arial Black, Impact, sans-serif;
+    font-weight: 900;
+  }
+</style>
+</head>
+<body>
+
+<svg viewBox="0 0 600 350" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Arcos -->
+  <path d="M80 220 C200 350 420 350 540 220"
+        fill="none" stroke="#0A4DAA" stroke-width="20"/>
+
+  <path d="M90 210 C220 320 400 320 520 210"
+        fill="none" stroke="#FFD200" stroke-width="14"/>
+
+  <path d="M100 200 C240 300 380 300 500 200"
+        fill="none" stroke="#FF8C00" stroke-width="10"/>
+
+  <!-- Engranaje (simplificado) -->
+  <circle cx="120" cy="170" r="55" fill="#E0E0E0" stroke="#777" stroke-width="6"/>
+
+  <!-- Barco (simplificado) -->
+  <path d="M420 150 L520 150 L480 185 L440 185 Z"
+        fill="#0A4DAA"/>
+  <rect x="455" y="110" width="30" height="40" fill="#0A4DAA"/>
+
+  <!-- Texto AGE -->
+  <text x="180" y="200"
+        font-size="120"
+        fill="#E30000"
+        stroke="#8B0000"
+        stroke-width="5"
+        class="text">
+    AG
+  </text>
+
+  <!-- Rayo -->
+  <polygon points="350,120 320,200 360,200 330,280 420,170 380,170"
+           fill="#FFD200" stroke="#FF8C00" stroke-width="4"/>
+
+  <!-- Letra E -->
+  <text x="390" y="200"
+        font-size="120"
+        fill="#E30000"
+        stroke="#8B0000"
+        stroke-width="5"
+        class="text">
+    E
+  </text>
+
+</svg>
+
+</body>
+</html>
         
         .user-info {
             display: flex;
