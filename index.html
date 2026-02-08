@@ -1,0 +1,99 @@
+entities
+WorkSession
+            {
+              "name": "WorkSession",
+              "type": "object",
+              "properties": {
+                "user_name": {
+                  "type": "string",
+                  "description": "Nombre del trabajador"
+              },
+              "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Fecha de la sesi\u00f3n"
+    },
+    "start_time": {
+      "type": "string",
+      "description": "Hora de entrada"
+    },
+    "end_time": {
+      "type": "string",
+      "description": "Hora de salida"
+    },
+    "regular_hours": {
+      "type": "number",
+      "description": "Horas normales trabajadas (m\u00e1ximo 8)"
+    },
+    "extra_hours": {
+      "type": "number",
+      "description": "Horas extras trabajadas"
+    },
+    "total_hours": {
+      "type": "number",
+      "description": "Total de horas trabajadas"
+    },
+    "work_description": {
+      "type": "string",
+      "description": "Descripci\u00f3n del trabajo realizado"
+    },
+    "is_active": {
+      "type": "boolean",
+      "description": "Si la sesi\u00f3n est\u00e1 activa"
+    }
+  },
+  "required": [
+    "user_name",
+    "date"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "created_by": "{{user.email}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "created_by": "{{user.email}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "$or": [
+        {
+          "created_by": "{{user.email}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "write": {
+      "$or": [
+        {
+          "created_by": "{{user.email}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    }
+  }
+}
